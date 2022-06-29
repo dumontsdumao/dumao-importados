@@ -1,0 +1,41 @@
+<header class="main-header">
+    <h1 class="main-header__title ">
+        <span class="main-header__title--carnelian">D</span>umão
+        <span>Importa</span><span class="main-header__title--carnelian">D</span>os
+    </h1>
+    <div class="container-menu">
+        <nav class="main-header__menu">
+            <ul>
+                <li>
+                    <a routerLink="/produtos">Produtos</a>
+                </li>
+                <li>
+                    <a routerLink="/carrinho">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        Carrinho
+                        <span class="badge-carrinho">
+                            {{carrinhoService.obtemCarrinho().length}}
+                        </span>
+                        <!--o obtemCarrinho retorna um vetor, então preciso botar um length para me retornar apenas o tamanho do vetor-->
+                    </a>
+
+                </li>
+                <li>
+                    <a routerLink="/contato">
+                        Contato
+                    </a>
+                </li>
+                <li><a href="https://www.linkedin.com/in/guilherme-dumont-416b66149" target="_blank"><i
+                            class="fa-brands fa-linkedin-in"></i></a></li>
+                <li><a href="https://www.instagram.com/dumontguilherme/" target="_blank"><i
+                            class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="https://twitter.com/gui_dumont" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <form class="search-form">
+            <input type="text" name="descricao">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
+</header>

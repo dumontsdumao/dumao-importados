@@ -1,0 +1,90 @@
+.main-header {
+    padding: 10px 0px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 40px;
+}
+
+.main-header__title {
+    font-size: 92px;
+    letter-spacing: -1.5px;
+}
+
+.main-header__title--ivory {
+    color: var(--ivory);
+}
+
+.main-header__title--blue {
+    color: var(--pacific-blue);
+}
+
+.main-header__title--carnelian {
+    color: var(--carnelian);
+}
+
+.main-header__menu ul {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.main-header__menu a {
+    padding: 10px 10px;
+    color: var(--black);
+    font-weight: 400;
+    font-size: 22px;
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+
+.main-header__menu a:hover {
+    background-color: var(--pacific-blue);
+    color: #fff;
+}
+
+.container-menu {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    flex: 1;
+}
+
+.search-form {
+    height: 44px;
+    display: flex;
+}
+
+
+.search-form input:focus {
+    background-color: var(--pacific-blue);
+    outline: none;
+    color: var(--ivory);
+}
+
+.search-form input {
+    width: 300px;
+    height: 40px;
+    flex: 1;
+    background-color: var(--ivory);
+    color: black;
+    border-color: black;
+    transition: all .3s ease-in-out;
+    font-size: 22px;
+}
+
+.search-form button {
+    width: 56px;
+    height: 46px;
+    background-color: var(--pacific-blue);
+    border-color: black;
+    color: var(--ivory);
+    font-size: 22px;
+}
+
+.badge-carrinho {
+    background-color: var(--black);
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: var(--ivory);
+}

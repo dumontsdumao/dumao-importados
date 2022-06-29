@@ -1,0 +1,93 @@
+<h2 class="contact__title"> Entre em contato </h2>
+<section class="contact__container">
+    <form class="contact-form" [formGroup]="formContat" (ngSubmit)="enviarForm()">
+
+        <input type="nome" placeholder="Digite o seu nome" formControlName="nome"
+            [class.valid]="formContat.controls['nome'].valid" [class.invalid]="formContat.controls['nome'].invalid
+            && (formContat.controls['nome'].touched || formContat.controls['nome'].dirty)">
+
+        <div *ngIf="formContat.controls['nome'].invalid && (formContat.controls['nome'].touched ||
+            formContat.controls['nome'].dirty)">
+            <small class="error-message" *ngIf="formContat.controls['nome'].hasError('minlength')">Esse campo precisa de
+                no
+                minimo 4 caracteres
+            </small>
+            <small class="error-message" *ngIf="formContat.controls['nome'].hasError('required')">Esse campo precisa ser
+                preenchido
+            </small>
+        </div>
+
+        <input type="assuntos" placeholder="Digite o assunto" formControlName="assuntos"
+            [class.valid]="formContat.controls['assuntos'].valid"
+            [class.invalid]="formContat.controls['assuntos'].invalid && (formContat.controls['assuntos'].touched || formContat.controls['assuntos'].dirty)">
+
+        <div *ngIf="formContat.controls['assuntos'].invalid && (formContat.controls['assuntos'].touched ||
+            formContat.controls['assuntos'].dirty)">
+            <small class="error-message" *ngIf="formContat.controls['assuntos'].hasError('minlength')">Esse campo
+                precisa de
+                no
+                minimo 10 caracteres
+            </small>
+            <small class="error-message" *ngIf="formContat.controls['assuntos'].hasError('required')">Esse campo precisa
+                ser
+                preenchido
+            </small>
+        </div>
+
+        <input type="telefone" placeholder="(00) 0 0000-0000" mask="(00) 0 0000-0000" formControlName="telefone"
+            [class.valid]="formContat.controls['telefone'].valid"
+            [class.invalid]="formContat.controls['telefone'].invalid && (formContat.controls['telefone'].touched || formContat.controls['telefone'].dirty)">
+
+        <div *ngIf="formContat.controls['telefone'].invalid && (formContat.controls['telefone'].touched ||
+            formContat.controls['telefone'].dirty)">
+            <small class="error-message" *ngIf="formContat.controls['telefone'].hasError('minlength')">Esse campo
+                precisa de
+                no
+                minimo 11 caracteres
+            </small>
+            <small class="error-message" *ngIf="formContat.controls['telefone'].hasError('required')">Esse campo precisa
+                ser
+                preenchido
+            </small>
+
+        </div>
+
+        <input type="email" placeholder="seuemail@email.com" formControlName="email"
+            [class.valid]="formContat.controls['email'].valid"
+            [class.invalid]="formContat.controls['email'].invalid && (formContat.controls['email'].touched || formContat.controls['email'].dirty)" />
+        <div *ngIf="formContat.controls['email'].invalid && (formContat.controls['email'].touched ||
+            formContat.controls['email'].dirty)">
+            <small class="error-message" *ngIf="formContat.controls['email'].hasError('email')">Esse campo precisa ser
+                um e-mail valido
+            </small>
+            <small class="error-message" *ngIf="formContat.controls['email'].hasError('required')">Esse campo precisa
+                ser
+                preenchido
+            </small>
+        </div>
+
+        <textarea maxlength="300" placeholder="Digite a sua mensagem..." rows="5" formControlName="mensagem"
+            [class.valid]="formContat.controls['mensagem'].valid"
+            [class.invalid]="formContat.controls['mensagem'].invalid && (formContat.controls['mensagem'].touched || formContat.controls['mensagem'].dirty)"></textarea>
+        <div *ngIf="formContat.controls['mensagem'].invalid && (formContat.controls['mensagem'].touched ||
+            formContat.controls['mensagem'].dirty)">
+            <small class="error-message" *ngIf="formContat.controls['mensagem'].hasError('minlength')">Esse campo
+                precisa de
+                no
+                minimo 30 caracteres
+            </small>
+            <small class="error-message" *ngIf="formContat.controls['mensagem'].hasError('required')">Esse campo precisa
+                ser
+                preenchido
+            </small>
+        </div>
+        <button [disabled]="formContat.invalid" type="submit">Enviar</button>
+    </form>
+    <address>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7801.142256766196!2d-44.99383506511231!3d-12.141469199999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x75f8ab1bc7081ed%3A0xb6faf86a8ab5eb57!2sR.%20Pedro%20Dourado%2C%2078%20-%20Vila%20Brasil%2C%20Barreiras%20-%20BA%2C%2047801-260!5e0!3m2!1spt-BR!2sbr!4v1656340661438!5m2!1spt-BR!2sbr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p>R. Pedro Dourado, 78 - Vila Brasil, Barreiras - BA, 47801-260 </p>
+    </address>
+</section>
